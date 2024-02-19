@@ -1,22 +1,36 @@
-export const chapter1 = [
-    {
-        id: 1,
-        type:"dialog",
-        text:"Bienvenue dans PFC, pour jouer il suffit d'utiliser sa souris. Appuyer sur une touche du clavier ou de la souris"
-    },
-    {
-        id: 2,
-        type:"dialog",
-        text:"Vous debloquez des succes accessibles en haut a droite au fur et a mesure de vos choix"
-    },
-    {
-        id: 3,
-        type:"choice",
-        choices: [
-            "Entrer dans le restaurant"
-        ]
-    },
-]
+export const chapter1 = {
+    background: "/images/scene/exterior.jpg",
+    dialog: [
+        {
+            id: 1,
+            type:"dialog",
+            text:"Bienvenue dans PFC, pour jouer il suffit d'appuyer sur ESPACE ou CLIQUE GAUCHE...",
+            next:2
+        },
+        {
+            id: 2,
+            type:"dialog",
+            text:"Attention ! Vos choix ont un impact sur le jeu et la fin de celui-ci",
+            next:3
+        },
+        {
+            id: 2,
+            type:"dialog",
+            text:"Vous debloquez des succes (tables) accessibles en haut a droite au fur et a mesure de vos choix",
+            next:4
+        },
+        {
+            id: 4,
+            type:"choice",
+            choices: [
+                {
+                    choice: "Entrer dans le restaurant.",
+                    next: 6
+                },
+            ]
+        },
+    ]
+}
 
 export const chapter2 = [
     {
@@ -33,7 +47,10 @@ export const chapter2 = [
         id: 3,
         type:"choice",
         choices: [
-            "Je n'ai pas encore commandé !"
+            {
+                choice: "Tiens, mon paypal.",
+                next: 4
+            },
         ]
     },
     {

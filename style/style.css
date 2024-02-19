@@ -34,6 +34,7 @@ body {
 }
 
 .character {
+    display: none;
     z-index: 0;
     position: absolute;
     bottom: 620px;
@@ -48,7 +49,7 @@ body {
 
 .dialog {
     z-index: 10;
-    height: 120px;
+    min-height: 120px;
     width: 700px;
     display: flex;
     gap: 8px;
@@ -56,29 +57,34 @@ body {
 }
 
 .dialog > div {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
 .dialog-box {
 
+    display: none;
     height: 100%;
+    cursor: pointer;
     width: 100%;
-    background: rgb(255, 235, 170);
+    background: rgb(200, 205, 255);
     padding: 16px;
     border-radius: 16px;
     border: 3px solid rgb(0, 0, 0);
 }
 
 .question-box {
-    background-color: bisque;
 
+    display: none;
+    position: relative;
+    background-color: rgb(255, 255, 255);
     height: 100%;
     width: 100%;
     padding: 16px;
     border-radius: 16px;
     border: 3px solid rgb(0, 0, 0);
 }
+
 
 .question-box:hover {
     cursor: pointer;
