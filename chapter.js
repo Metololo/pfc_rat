@@ -10,36 +10,41 @@ function cleanDialogs() {
         }
 }
 
-function playChapter(item) {
+function playChapter(chapter,itemId) {
+
+    const item = chapter.find(item => item.id === itemId);
+    const textBox = document.getElementById("text-box");
+
+    while(textBox.firstChild) {
+        textBox.removeChild(textBox.firstChild)
+    }
+
+
     if(item.type == "dialog") {
-        printDialog(item.text)
+        const dialogBox = makeDialogBox(item.text)
+        console.log(dialogBox)
+        textBox.appendChild(dialogBox)
+
+        dialogBox.addEventListener("click", () => {
+            playChapter(chapter,item.next)
+        })
+
     } else if(item.type == "choice") {
+        item.choices.forEach(item => {
+            console.log("test")
+            textBox.appendChild(makeChoiceBox(item.choice))
+        });
+
     }
-}
-
-function printDialog(text) {
-
-    const choices = document.getElementsByClassName("question-box")
-    for(let i = 0; i < choices.length; i++) {
-        choices[i].style.display = "none";
-    }
-
-    const dialogBox = document.getElementById("dialog-box-1")
-    dialogBox.style.display = "block";
-
-    const dialogBoxText = document.getElementById("dialog-box-text")
-    dialogBoxText.innerHTML = text;
 }
 
 export function startChapter(chapter) {
 
     const start = chapter.dialog
 
-    cleanDialogs()
-
     setBackground(chapter)
 
-    playChapter(start[0])
+    playChapter(start,1)
 
 }
 
@@ -50,7 +55,7 @@ function makeDialogBox(text) {
     dialogBox.id = 'dialog-box-1';
 
     const paragraph = document.createElement('p');
-    paragraph.textContent = 'xx';
+    paragraph.textContent = text;
     paragraph.id = 'dialog-box-text';
 
     dialogBox.appendChild(paragraph);
@@ -62,14 +67,14 @@ function makeDialogBox(text) {
 
 function makeChoiceBox(text) {
     const choiceBox = document.createElement('div');
-    questionBox.classList.add('question-box');
+    choiceBox.classList.add('question-box');
 
     const paragraph = document.createElement('p');
     paragraph.textContent = text;
 
-    questionBox.appendChild(paragraph);
+    choiceBox.appendChild(paragraph);
 
-    document.body.appendChild(questionBox);
+    document.body.appendChild(choiceBox);
 
     return choiceBox
 }

@@ -4,7 +4,13 @@ export const chapter1 = {
         {
             id: 1,
             type:"dialog",
-            text:"Bienvenue dans PFC, pour jouer il suffit d'appuyer sur ESPACE ou CLIQUE GAUCHE...",
+            text:"Bienvenue dans PFC, pour jouer il suffit d'appuyer sur CLIQUE GAUCHE sur le texte...",
+            next:1.5
+        },
+        {
+            id: 1.5,
+            type:"dialog",
+            text:"Vous pourrez entrer en interaction avec les elements en surbrillance...",
             next:2
         },
         {
@@ -14,7 +20,7 @@ export const chapter1 = {
             next:3
         },
         {
-            id: 2,
+            id: 3,
             type:"dialog",
             text:"Vous debloquez des succes (tables) accessibles en haut a droite au fur et a mesure de vos choix",
             next:4
