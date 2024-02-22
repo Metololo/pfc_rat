@@ -1,5 +1,16 @@
 import { characters } from "./characters.js";
 
+let latestSuccess = 0
+
+export function showLatestSuccess() {
+    if(latestSuccess == 0 ) {
+        showNoSuccess()
+    }else {
+        showSuccess(latestSuccess)
+    }
+}
+
+
 function cleanDialogs() {
     const questions = document.getElementsByClassName("question-box")
     for(let i = 0; i < questions.length; i++) {
@@ -27,8 +38,28 @@ function playChapter(dialog,itemId) {
         setBackground(item.background)
     }
 
+    const characterBox = document.getElementById("character-box")
+    while(characterBox.firstChild) {
+        characterBox.removeChild(characterBox.firstChild)
+    }
+
     if(item.character !== undefined) {
+        console.log("there is chara")
         setCharacter(item.character)
+    }
+
+
+    if(item.success !== undefined) {
+        showSuccess(item.success)
+    }
+
+    const assetBox = document.getElementById("asset-box")
+    while(assetBox.firstChild) {
+        assetBox.removeChild(assetBox.firstChild)
+    }
+
+    if(item.asset !== undefined) {
+        setAsset(item.asset)
     }
 
 
@@ -56,12 +87,80 @@ function playChapter(dialog,itemId) {
     }
 }
 
+function showNoSuccess() {
+
+    let div = document.createElement("div");
+    div.setAttribute("class","noSuccess")
+    div.setAttribute("id", "success");
+
+    var h1 = document.createElement("h1");
+    h1.textContent = "VOUS N'AVEZ PAS ENCORE DE SUCCES";
+
+    div.appendChild(h1);
+
+    div.addEventListener("click", () => {
+        const successBox = document.getElementById("success-box")
+        while(successBox.firstChild) successBox.removeChild(successBox.firstChild)
+    })
+
+    const successBox = document.getElementById("success-box")
+    successBox.appendChild(div)
+
+
+}
+
+function showSuccess(success) {
+
+    latestSuccess = success
+
+    let div = document.createElement("div");
+    div.setAttribute("id", "success");
+
+    var h1 = document.createElement("h1");
+    h1.textContent = success.title;
+
+    // Create img element
+    let img = document.createElement("img");
+    img.setAttribute("src", `images/success/success${success.number}.png`);
+    img.setAttribute("alt", "");
+    img.addEventListener("click", () => {
+        const successBox = document.getElementById("success-box")
+        while(successBox.firstChild) successBox.removeChild(successBox.firstChild)
+    })
+
+    // Append h1 and img elements to div
+    div.appendChild(h1);
+    div.appendChild(img);
+
+    const successBox = document.getElementById("success-box")
+    successBox.appendChild(div)
+}
+
+function setAsset(name) {
+    const assetBox = document.getElementById("asset-box")
+    assetBox.appendChild(createAsset(name))
+    
+}
+
+function createAsset(name) {
+    let div = document.createElement("div");
+    div.setAttribute("id", "asset");
+    div.addEventListener("click", () => {
+        const assetBox = document.getElementById("asset-box")
+        while(assetBox.firstChild) assetBox.removeChild(assetBox.firstChild)
+    })
+
+    let img = document.createElement("img");
+    img.setAttribute("src", `images/asset/${name}`);
+    img.setAttribute("alt", "");
+
+    div.appendChild(img);
+
+    return div
+}
+
 function setCharacter(name) {
     const characterBox = document.getElementById("character-box")
-
-    while(characterBox.firstChild) {
-        characterBox.removeChild(characterBox.firstChild)
-    }
 
     const character = characters.find(c => c.name === name)
 
@@ -92,7 +191,7 @@ function createCharacter(url,side) {
 
 export function startChapter(dialog) {
 
-    playChapter(dialog,1)
+    playChapter(dialog,12)
 
 }
 
