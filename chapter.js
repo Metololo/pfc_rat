@@ -1,3 +1,5 @@
+import { characters } from "./characters.js";
+
 function cleanDialogs() {
     const questions = document.getElementsByClassName("question-box")
     for(let i = 0; i < questions.length; i++) {
@@ -10,43 +12,91 @@ function cleanDialogs() {
         }
 }
 
-function playChapter(chapter,itemId) {
+function playChapter(dialog,itemId) {
 
-    const item = chapter.find(item => item.id === itemId);
+    if(itemId == "end") return
+
+    const item = dialog.find(item => item.id === itemId);
     const textBox = document.getElementById("text-box");
 
     while(textBox.firstChild) {
         textBox.removeChild(textBox.firstChild)
     }
 
+    if(item.background !== undefined) {
+        setBackground(item.background)
+    }
+
+    if(item.character !== undefined) {
+        setCharacter(item.character)
+    }
+
 
     if(item.type == "dialog") {
+
         const dialogBox = makeDialogBox(item.text)
-        console.log(dialogBox)
         textBox.appendChild(dialogBox)
 
         dialogBox.addEventListener("click", () => {
-            playChapter(chapter,item.next)
+            playChapter(dialog,item.next)
         })
 
     } else if(item.type == "choice") {
-        item.choices.forEach(item => {
-            console.log("test")
-            textBox.appendChild(makeChoiceBox(item.choice))
+
+        item.choices.forEach(choice => {
+
+            const choiceBox = makeChoiceBox(choice.choice)
+            textBox.appendChild(choiceBox)
+            choiceBox.addEventListener("click", () => {
+                playChapter(dialog,choice.next)
+            })
+
         });
 
     }
 }
 
-export function startChapter(chapter) {
+function setCharacter(name) {
+    const characterBox = document.getElementById("character-box")
 
-    const start = chapter.dialog
+    while(characterBox.firstChild) {
+        characterBox.removeChild(characterBox.firstChild)
+    }
 
-    setBackground(chapter)
+    const character = characters.find(c => c.name === name)
 
-    playChapter(start,1)
+    let side = ""
+
+    if (Math.random()< 0.5) {
+        side = "right-side-character"
+    } else {
+        side = "left-side-character"
+    }
+
+    characterBox.appendChild(createCharacter(character.image,side))
+    
+}
+
+function createCharacter(url,side) {
+
+    let characterDiv = document.createElement("div");
+    characterDiv.className = "character " + side;
+    
+    let imgElement = document.createElement("img");
+    imgElement.src = `images/character/${url}`;
+    imgElement.alt = "";
+    characterDiv.appendChild(imgElement);
+    return characterDiv;
+}
+
+
+export function startChapter(dialog) {
+
+    playChapter(dialog,1)
 
 }
+
+
 
 function makeDialogBox(text) {
 
@@ -79,6 +129,6 @@ function makeChoiceBox(text) {
     return choiceBox
 }
 
-function setBackground(chapter) {
-    document.getElementById("scene-bg").src = chapter.background
+export function setBackground(background) {
+    document.getElementById("scene-bg").src = background
 }

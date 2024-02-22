@@ -34,17 +34,50 @@ body {
 }
 
 .character {
-    display: none;
     z-index: 0;
     position: absolute;
-    bottom: 620px;
+    bottom: -20px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+    color: black;
 }
 
 .right-side-character {
-    z-index: 0;
-    top: 10px;
-    left: 320px;
+    right: 10px;
     transform: scaleX(-1);
+}
+
+#success {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#success > img {
+    cursor: pointer;
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.left-side-character {
+    left: 0px;
 }
 
 .dialog {

@@ -1,8 +1,5 @@
 import { startChapter } from "./chapter.js";
-import { chapter1 } from "./dialogs.js";
-
-console.log(chapter1)
-
+import { dialog } from "./dialogs.js";
 
 console.log("test")
-startChapter(chapter1);
+startChapter(dialog);
