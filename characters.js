@@ -20,7 +20,7 @@ export const characters = [
         image:"shrek_run.png"
     },
     {
-        name:"shrek_tpose.png",
+        name:"shrek_tpose",
         image:"shrek_tpose.png"
     },
 ]

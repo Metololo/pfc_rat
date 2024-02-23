@@ -429,87 +429,82 @@ export const dialog = [
         },
         {
             id: 51,
+            success:{
+                title: "TABLE DEBLOQUE : DISCOUNT",
+                number: 10,
+            },
             asset:"voucher.png",
             character:"angry_shrek",
             type:"choice",
             choices: [
                 {
                     choice: "Super, ta commande est gratuite !",
-                    next: 44
+                    next: 52
                 },
             ],
-            next: 52
         },
         {
-            success:{
-                number: 10,
-            },
-            id: 50,
+            id: 52,
             character:"Django",
             type:"dialog",
             text: "Django : Attends ! C'est un faux coupon ! Espece d'arnaqueur Shrek !",
-            next: 51,
-        },
-        {
-            success:{
-                number: 11,
-            },
-            id: 51,
-            character:"angry_shrek",
-            type:"dialog",
-            text: "Shrek : Moi ?? Alors la vous allez voir !!",
-            next: 52,
-        },
-        {
-            success:{
-                number: 11,
-            },
-            id: 52,
-            character:"shrek_tpose",
-            type:"dialog",
-            text: "* Shrek se transforme *",
             next: 53,
         },
-        {
+        {   
             success:{
+                title: "TABLE DEBLOQUE : INCIDENT",
                 number: 11,
             },
             id: 53,
-            character:"razmo",
+            character:"angry_shrek",
             type:"dialog",
-            text: "Razmo : Eh oui ! C'est moi razmo les idiots !",
+            text: "Shrek : Moi ?? Alors la vous allez voir !!",
             next: 54,
         },
         {
             id: 54,
-            character:"razmo",
+            character:"shrek_tpose",
             type:"dialog",
-            text: "Razmo : Shrek n'existe pas ! C'est un personnage fictif KIKIKIKIKI... !!",
+            text: "* Shrek se transforme *",
             next: 55,
         },
         {
             id: 55,
-            character:"razmo",
+            character:"Razmo",
             type:"dialog",
-            text: "Razmo : Kikiki... Kikikikikiiii... Kikikii....",
+            text: "Razmo : Eh oui ! C'est moi razmo les idiots !",
             next: 56,
         },
         {
             id: 56,
-            character:"razmo",
+            character:"Razmo",
             type:"dialog",
-            text: "Razmo : Kikiki... Kikikikikiiii... Kikikii....",
+            text: "Razmo : Shrek n'existe pas ! C'est un personnage fictif KIKIKIKIKI... !!",
             next: 57,
         },
         {
             id: 57,
-            character:"Django",
+            character:"Razmo",
             type:"dialog",
-            text: "Django : Oh mince ! C'est razmo le boss de rat city !!",
-            next: 58
+            text: "Razmo : Kikiki... Kikikikikiiii... Kikikii....",
+            next: 58,
         },
         {
             id: 58,
+            character:"Razmo",
+            type:"dialog",
+            text: "Razmo : kiki... Kikiki... Kikikikikiki....",
+            next: 59,
+        },
+        {
+            id: 59,
+            character:"Django",
+            type:"dialog",
+            text: "Django : Oh mince ! C'est razmo le boss de rat city !!",
+            next: 60
+        },
+        {
+            id: 60,
             type:"dialog",
             text: "Quel plot twist ! Acheter le DLC pour connaitre la fin !",
         },
