@@ -337,17 +337,181 @@ export const dialog = [
         {
             id: 41,
             type:"choice",
+            character:"Raphael",
             choices: [
                 {
                     choice: "👊Coup de poing👊",
-                    next: 34
+                    next: 42
                 },
                 {
                     choice: "💥Coup de boule💥",
-                    next: 34
+                    next: 42
                 },
             ]
         },
-
+        {
+            id: 42,
+            character:"Django",
+            background: "/images/scene/caisse.jpg",
+            type:"dialog",
+            text: "Django : Ta du cran petit. Ca te dirais de travailler pour moi ?",
+            next: 43,
+        },
+        {
+            id: 43,
+            character:"Django",
+            type:"choice",
+            choices: [
+                {
+                    choice: "Oui",
+                    next: 44
+                },
+                {
+                    choice: "Oui",
+                    next: 44
+                },
+            ]
+        },
+        {
+            id: 44,
+            character:"Django",
+            success: {
+                number:8,
+                title: "TABLE DEBLOQUE : EMPLOYEE"
+            },
+            background: "/images/scene/caisse.jpg",
+            type:"dialog",
+            text: "Django : parfait, laisse moi ouvrir mon ordinateur",
+            next: 46,
+        },
+        {
+            id: 46,
+            character:"Django",
+            background: "/images/scene/caisse.jpg",
+            type:"dialog",
+            text: "Django : grace au super mcd de l'application, je peut t'assigner tes heures de manieres flexibles...",
+            next: 47,
+        },
+        {
+            id: 47,
+            success: {
+                number:9,
+                title: "TABLE DEBLOQUES !"
+            },
+            character:"Django",
+            background: "/images/scene/caisse.jpg",
+            type:"dialog",
+            text: "Django : Parfait... Va a la caisse acceuillir les clients",
+            next: 48,
+        },
+        {
+            id: 48,
+            character:"Django",
+            background: "/images/scene/employ.jpg",
+            type:"dialog",
+            text: "Django : Si ya soucis, appelle moi.",
+            next: 49,
+        },
+        {
+            id: 49,
+            character:"shrek_run",
+            background: "/images/scene/employ.jpg",
+            type:"dialog",
+            text: "Shrek : J'AI FAIMMM !!!!!.",
+            next: 50,
+        },
+        {
+            id: 50,
+            character:"angry_shrek",
+            type:"dialog",
+            text: "Shrek : VITE ! TIENS MON COUPON DE REDUCTION !!",
+            next: 51,
+        },
+        {
+            id: 51,
+            asset:"voucher.png",
+            character:"angry_shrek",
+            type:"choice",
+            choices: [
+                {
+                    choice: "Super, ta commande est gratuite !",
+                    next: 44
+                },
+            ],
+            next: 52
+        },
+        {
+            success:{
+                number: 10,
+            },
+            id: 50,
+            character:"Django",
+            type:"dialog",
+            text: "Django : Attends ! C'est un faux coupon ! Espece d'arnaqueur Shrek !",
+            next: 51,
+        },
+        {
+            success:{
+                number: 11,
+            },
+            id: 51,
+            character:"angry_shrek",
+            type:"dialog",
+            text: "Shrek : Moi ?? Alors la vous allez voir !!",
+            next: 52,
+        },
+        {
+            success:{
+                number: 11,
+            },
+            id: 52,
+            character:"shrek_tpose",
+            type:"dialog",
+            text: "* Shrek se transforme *",
+            next: 53,
+        },
+        {
+            success:{
+                number: 11,
+            },
+            id: 53,
+            character:"razmo",
+            type:"dialog",
+            text: "Razmo : Eh oui ! C'est moi razmo les idiots !",
+            next: 54,
+        },
+        {
+            id: 54,
+            character:"razmo",
+            type:"dialog",
+            text: "Razmo : Shrek n'existe pas ! C'est un personnage fictif KIKIKIKIKI... !!",
+            next: 55,
+        },
+        {
+            id: 55,
+            character:"razmo",
+            type:"dialog",
+            text: "Razmo : Kikiki... Kikikikikiiii... Kikikii....",
+            next: 56,
+        },
+        {
+            id: 56,
+            character:"razmo",
+            type:"dialog",
+            text: "Razmo : Kikiki... Kikikikikiiii... Kikikii....",
+            next: 57,
+        },
+        {
+            id: 57,
+            character:"Django",
+            type:"dialog",
+            text: "Django : Oh mince ! C'est razmo le boss de rat city !!",
+            next: 58
+        },
+        {
+            id: 58,
+            type:"dialog",
+            text: "Quel plot twist ! Acheter le DLC pour connaitre la fin !",
+        },
         
 ]

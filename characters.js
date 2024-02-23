@@ -6,5 +6,21 @@ export const characters = [
     {
         name:"Raphael",
         image:"ninja.png"
-    }
+    },
+    {
+        name:"Razmo",
+        image:"razmo.png"
+    },
+    {
+        name:"angry_shrek",
+        image:"angry_shrek.png"
+    },
+    {
+        name:"shrek_run",
+        image:"shrek_run.png"
+    },
+    {
+        name:"shrek_tpose.png",
+        image:"shrek_tpose.png"
+    },
 ]
