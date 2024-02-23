@@ -190,9 +190,7 @@ function createCharacter(url,side) {
 
 5
 export function startChapter(dialog) {
-
-    playChapter(dialog,22)
-
+    playChapter(dialog,40)
 }
 
 

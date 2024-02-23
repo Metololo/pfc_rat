@@ -226,7 +226,7 @@ export const dialog = [
             id: 28,
             type:"dialog",
             asset:"code_promo.png",
-            text: "je sais pas quoi ecrire dans ce dialogue alors -> CLIQUE GAUCHE svp",
+            text: "j'ai pas d'inspiration pour ce dialogue",
             next: 29,
         },
         {
@@ -250,25 +250,28 @@ export const dialog = [
                 },
                 {
                     choice: "Non",
-                    next: 32
+                    next: 31
                 },
             ]
         },
         {
             id: 31,
             type:"dialog",
-            asset:"code_promo.png",
             text: "Borne : é ba tu pren une salade !",
             next: 32,
         },
         {
             id: 32,
             type:"dialog",
-            asset:"code_promo.png",
             text: "Borne : tu ve conbi1 de tenders ?",
             next: 33,
         },
         {
+            id: 29,
+            success: {
+                number:6,
+                title: "TABLE DEBLOQUES"
+            },
             id: 33,
             type:"choice",
             choices: [
@@ -285,29 +288,66 @@ export const dialog = [
         {
             id: 34,
             type:"dialog",
-            asset:"code_promo.png",
             text: "Borne : 23 ?!! tu a fain toa !",
             next: 35,
         },
         {
             id: 35,
             type:"dialog",
-            asset:"code_promo.png",
-            text: "Borne : an menu XXL tu di ? pas de problem",
+            text: "Borne : 1 menu XXL tu di ? pas de problem",
             next: 36,
         },
         {
             id: 36,
             type:"dialog",
-            asset:"code_promo.png",
             text: "Borne : atention la taxe a rat city es de 123% pour lé boisson gazeuse",
             next: 37,
         },
         {
             id: 37,
             type:"dialog",
-            asset:"code_promo.png",
-            text: "Borne : t sur ke tu ve lé 5 bouteill de coca avec ?",
+            text: "Borne : je té mi 5 bouteill de coca c moa ki régal",
             next: 38,
         },
+        {
+            id: 38,
+            type:"dialog",
+            text: "Borne : t sur ke tu ve lé 5 bouteill de coca avec ?",
+            next: 39,
+        },
+        {
+            id: 39,
+            asset: "receipt.png",
+            type:"dialog",
+            text: "Borne : pran ta comande et va a la caiss",
+            next: 40,
+        },
+        {
+            id: 40,
+            character:"Raphael",
+            success: {
+                number:7,
+                title: "TABLE DEBLOQUE : ORDER"
+            },
+            background: "/images/scene/caisse.jpg",
+            type:"dialog",
+            text: "Raphael : Eh toi ? pousse toi c'est moi qui passe en premier",
+            next: 41,
+        },
+        {
+            id: 41,
+            type:"choice",
+            choices: [
+                {
+                    choice: "👊Coup de poing👊",
+                    next: 34
+                },
+                {
+                    choice: "💥Coup de boule💥",
+                    next: 34
+                },
+            ]
+        },
+
+        
 ]
