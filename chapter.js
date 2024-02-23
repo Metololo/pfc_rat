@@ -188,10 +188,10 @@ function createCharacter(url,side) {
     return characterDiv;
 }
 
-
+5
 export function startChapter(dialog) {
 
-    playChapter(dialog,12)
+    playChapter(dialog,22)
 
 }
 

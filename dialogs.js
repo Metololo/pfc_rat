@@ -108,7 +108,7 @@ export const dialog = [
             background:"/images/scene/borne.jpg",
             id: 12,
             type:"dialog",
-            text:"Borne : Ta un compte client ?",
+            text:"Borne : Ta un conte clian ?",
             next:13
         },
         {
@@ -116,7 +116,7 @@ export const dialog = [
             type:"choice",
             choices: [
                 {
-                    choice: "Entré ses idantifians",
+                    choice: "Entrer ses identifiants",
                     next: 14
                 },
             ]
@@ -124,16 +124,23 @@ export const dialog = [
         {
             id: 14,
             type:"dialog",
-            text: "Borne : Ta gagné une reconpanse a force de mangé le bon poulé mariné du PFC",
-            next:15,
             success: {
                 number:3,
-                title:"TABLE DEBLOQUE : CLIENT"
-            }
+                title:"TABLE DEBLOQUE : CLIENT",
+            },
+            text: "Borne : cool, laice moa regardé ton conte",
+            next:14.5,
+        },
+        {
+            id: 14.5,
+            asset:"client_point.jpg",
+            asset:"client_point.jpg",
+            type:"dialog",
+            text: "Borne : Ta gagné une reconpanse a force de mangé le bon poulé mariné du PFC",
+            next:15,
         },
         {
             id: 15,
-            asset:"client_point.jpg",
             type:"dialog",
             next: 16,
             text: "Borne : Dès la première bouchée dans le Poulet Frit du PFC, c'est rien de moins que révélateur. Une perfection croustillante et dorée cède la place à une viande succulente et tendre qui fond littéralement dans la bouche. Chaque bouchée est une symphonie de saveurs, un mélange harmonieux de notes salées et d'épices subtiles qui dansent sur vos papilles, vous laissant désirer plus.",
@@ -179,12 +186,9 @@ export const dialog = [
         {
             id: 21,
             type:"dialog",
-            text: "Borne : la chanse, ta gagné la statu goldrat 2000 !!",
-            next: 24,
-            success: {
-                number:4,
-                title: "TABLE DEBLOQUE : COLLECTIBLE"
-            }
+            text: "Borne : la chanse, ta gagné la statu maxi-rat 2000 !!",
+            asset:"rat_figure.png",
+            next: 25,
         },
         {
             id: 22,
@@ -201,5 +205,109 @@ export const dialog = [
                     next: 21
                 },
             ]
+        },
+        {
+            id: 25,
+            type:"dialog",
+            success: {
+                number:4,
+                title: "TABLE DEBLOQUE : COLLECTIBLE"
+            },
+            text: "Borne : allé choasi ta comande",
+            next: 27,
+        },
+        {
+            id: 27,
+            type:"dialog",
+            text: "Borne : oh atan jai oublié ! ya dé promo pour le resto an ce moman",
+            next: 28,
+        },
+        {
+            id: 28,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "je sais pas quoi ecrire dans ce dialogue alors -> CLIQUE GAUCHE svp",
+            next: 29,
+        },
+        {
+            id: 29,
+            success: {
+                number:5,
+                title: "TABLE DEBLOQUE : PROMOTION"
+            },
+            asset: "menu.png",
+            type:"dialog",
+            text: "Borne : ta dé alérgéne ?",
+            next: 30,
+        },
+        {
+            id: 30,
+            type:"choice",
+            choices: [
+                {
+                    choice: "Oui",
+                    next: 31
+                },
+                {
+                    choice: "Non",
+                    next: 32
+                },
+            ]
+        },
+        {
+            id: 31,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "Borne : é ba tu pren une salade !",
+            next: 32,
+        },
+        {
+            id: 32,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "Borne : tu ve conbi1 de tenders ?",
+            next: 33,
+        },
+        {
+            id: 33,
+            type:"choice",
+            choices: [
+                {
+                    choice: "5",
+                    next: 34
+                },
+                {
+                    choice: "10",
+                    next: 34
+                },
+            ]
+        },
+        {
+            id: 34,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "Borne : 23 ?!! tu a fain toa !",
+            next: 35,
+        },
+        {
+            id: 35,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "Borne : an menu XXL tu di ? pas de problem",
+            next: 36,
+        },
+        {
+            id: 36,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "Borne : atention la taxe a rat city es de 123% pour lé boisson gazeuse",
+            next: 37,
+        },
+        {
+            id: 37,
+            type:"dialog",
+            asset:"code_promo.png",
+            text: "Borne : t sur ke tu ve lé 5 bouteill de coca avec ?",
+            next: 38,
         },
 ]

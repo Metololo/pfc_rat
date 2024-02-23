@@ -81,12 +81,13 @@ h1 {
 }
 #asset img {
     object-fit: contain;
-    z-index: 1000;
+    max-height: 80%;
+    z-index: 500;
 }
 
 #success {
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 20;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
