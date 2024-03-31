@@ -498,13 +498,38 @@ export const dialog = [
         },
         {
             id: 59,
-            character:"Django",
+            character:"Razmo",
             type:"dialog",
-            text: "Django : Oh mince ! C'est razmo le boss de rat city !!",
-            next: 60
+            text: "Razmo : Hihihhihi... Hihihi... hihi....",
+            next: 60,
         },
         {
             id: 60,
+            character:"Razmo",
+            type:"dialog",
+            text: "Razmo : Hehe... Hehehehee..",
+            next: 61,
+        },
+        {
+            id: 61,
+            character:"Razmo",
+            type:"dialog",
+            text: "Razmo : HOHOHOHOHO.... ehehehAHAHAHAAHAHAHAH !!!!",
+            next: 62,
+        },
+        {
+            id: 62,
+            character:"Django",
+            type:"dialog",
+            text: "Django : Oh mince ! C'est razmo le boss de rat city !!",
+            next: 63
+        },
+        {
+            id: 63,
+            success:{
+                number:12,
+                title: "MCD COMPLET"
+            },
             type:"dialog",
             text: "Quel plot twist ! Acheter le DLC pour connaitre la fin !",
         },
